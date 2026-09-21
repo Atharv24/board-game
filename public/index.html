@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Snakes & Ladders Multiplayer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <div id="setup-screen">
+    <h1>Snakes & Ladders</h1>
+    <input type="text" id="username" placeholder="Enter your name" />
+    <button id="join-btn">Join Lobby</button>
+  </div>
+
+  <div id="game-screen" style="display: none;">
+    <div id="sidebar">
+      <h2>Game Status</h2>
+      <div id="player-list"></div>
+      <p id="turn-indicator"></p>
+      <button id="start-btn">Start Game</button>
+      <button id="roll-btn" disabled>Roll Dice</button>
+      <div id="bully-controls" style="display: none;">
+        <p id="bully-prompt-text" style="font-weight: bold; margin-bottom: 8px;"></p>
+        <div style="display: flex; gap: 10px;">
+          <button id="push-btn" style="flex: 1; background: #27ae60;">Push</button>
+          <button id="pull-btn" style="flex: 1; background: #e67e22;">Pull</button>
+        </div>
+      </div>
+      <div id="log"></div>
+    </div>
+    <div id="board-container">
+      <svg id="board-overlay"></svg>
+      <div id="board"></div>
+    </div>
+  </div>
+
+  <script type="module" src="client.js"></script>
+</body>
+</html>
